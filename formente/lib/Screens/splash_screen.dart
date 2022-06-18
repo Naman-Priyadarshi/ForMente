@@ -23,12 +23,8 @@ class _SplashScreeState extends State<SplashScreen> {
   }
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: ListView(
-        children: [
-          Image(image: AssetImage("assets/background.png"))
-        ],
-      ),
+    return  Image.asset(
+    "assets/splash.png",fit: BoxFit.fill,scale: 1.2 ,
     );
   }
 }
