@@ -55,6 +55,7 @@ class UserServices {
       DiaryEntryModel element = DiaryEntryModel.fromMap(entry);
       entries.add(element);
     }
+    entries.sort((a,b)=>b.dateTime!.compareTo(a.dateTime!));
     return entries;
   }
 
