@@ -1,4 +1,4 @@
-package com.citizenfive.formente.formente
+package com.citizenfive.formente
 
 import io.flutter.embedding.android.FlutterActivity
 
