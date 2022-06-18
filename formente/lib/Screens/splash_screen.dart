@@ -4,6 +4,8 @@ import 'dart:async';
 import 'package:formente/main.dart';
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({Key? key}) : super(key: key);
+
   @override
   State<SplashScreen> createState() => _SplashScreeState();
 }
@@ -12,11 +14,11 @@ class _SplashScreeState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 5),
+    Timer(const Duration(seconds: 5),
             ()=>Navigator.pushReplacement(context,
             MaterialPageRoute(builder:
                 (context) =>
-                ScreensController()
+                const ScreensController()
             )
         )
     );
