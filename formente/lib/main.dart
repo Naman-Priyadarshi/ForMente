@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider.value(value: AppProvider()),
         ChangeNotifierProvider.value(value: UserProvider.initialize()),
       ],
-      child: MaterialApp(
+      child: const MaterialApp(
         home: SplashScreen(),
         debugShowCheckedModeBanner:false,
       ),
