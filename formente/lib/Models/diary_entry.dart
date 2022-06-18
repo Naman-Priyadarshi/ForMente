@@ -1,8 +1,10 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:uuid/uuid.dart';
 
 class DiaryEntryModel{
-  var uuid = Uuid();
+  var uuid = const Uuid();
 
   static const ID = "id";
   static const ENTRY_TEXT = "entryText";

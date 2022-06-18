@@ -2,7 +2,7 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'diaryEntry.dart';
+import 'diary_entry.dart';
 
 
 class UserModel {

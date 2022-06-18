@@ -1,4 +1,6 @@
 
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:formente/Screens/Authenticate/reset_password.dart';
 
@@ -10,8 +12,9 @@ import '../../Providers/user.dart';
 class SignIn extends StatefulWidget {
 
   final Function? Toggle;
-  SignIn({ this.Toggle});
+  const SignIn({Key? key,  this.Toggle}) : super(key: key);
   @override
+  // ignore: library_private_types_in_public_api
   _SignInState createState() => _SignInState();
 }
 
@@ -35,12 +38,12 @@ class _SignInState extends State<SignIn> {
           height: MediaQuery.of(context).size.height,
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors:[Color(0xff2AB5E1),Color(0xff19C5FC).withOpacity(0.2)],
+              colors:[const Color(0xff2AB5E1),const Color(0xff19C5FC).withOpacity(0.2)],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter
             )
           ),
-          padding: EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(
             vertical: 5.0,
             horizontal: 30,
           ),
@@ -49,23 +52,23 @@ class _SignInState extends State<SignIn> {
               key: _formkey,
               child: Column(
                 children: [
-                  SizedBox(height: 150,),
+                  const SizedBox(height: 150,),
                   Image.asset(
                       "assets/logo_big.png",
                     height: 50,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   Container(
                     decoration: BoxDecoration(
                         color: Colors.white.withOpacity(0.6),
-                        borderRadius: new BorderRadius.circular(10.0)
+                        borderRadius: BorderRadius.circular(10.0)
                     ),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(vertical: 2.0,horizontal: 4.0),
                       child: TextFormField(
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           hintText: 'Enter your Email ID',
                           border: InputBorder.none,
                           focusedBorder: OutlineInputBorder(
@@ -83,18 +86,18 @@ class _SignInState extends State<SignIn> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Container(
                     decoration: BoxDecoration(
                         color: Colors.white.withOpacity(0.6),
-                        borderRadius: new BorderRadius.circular(10.0)
+                        borderRadius: BorderRadius.circular(10.0)
                     ),
                     child: ListTile(
-                      contentPadding: EdgeInsets.symmetric(horizontal: 8.0),
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 8.0),
                       title: TextFormField(
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           hintText: 'Enter your password',
                           border: InputBorder.none,
                           focusedBorder: OutlineInputBorder(
@@ -124,7 +127,7 @@ class _SignInState extends State<SignIn> {
                           }),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   CircleAvatar(
@@ -140,15 +143,15 @@ class _SignInState extends State<SignIn> {
                             }
                           }
                         },
-                        icon: Icon(Icons.arrow_forward_outlined)
+                        icon: const Icon(Icons.arrow_forward_outlined)
                     ),
                   ),
-                  SizedBox(height: 20,),
+                  const SizedBox(height: 20,),
                   GestureDetector(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (c)=>ForgotPassword()));
+                      Navigator.push(context, MaterialPageRoute(builder: (c)=>const ForgotPassword()));
                     },
-                    child: Text(
+                    child: const Text(
                       "Forgot Password?",
                       style: TextStyle(
                         color: Colors.white,
@@ -156,11 +159,11 @@ class _SignInState extends State<SignIn> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 30.0,),
+                  const SizedBox(height: 30.0,),
                   Text(
                     error,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Colors.red,
                         fontSize: 20.0
                     ),
@@ -168,22 +171,22 @@ class _SignInState extends State<SignIn> {
                   Text(
                     error2,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Colors.red,
                         fontSize: 20.0
                     ),
                   ),
-                  SizedBox(height: 70),
-                  Text(
+                  const SizedBox(height: 70),
+                  const Text(
                     "Don't have one?"
                   ),
                   ElevatedButton(
                       onPressed: (){
                         widget.Toggle!();
                       },
-                      child: Text("Create an account")),
-                  SizedBox(height: 40,),
-                  Text(
+                      child: const Text("Create an account")),
+                  const SizedBox(height: 40,),
+                  const Text(
                     "By CitizenFive",
                     style: TextStyle(
                       fontSize: 10,

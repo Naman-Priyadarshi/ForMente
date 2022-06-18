@@ -7,7 +7,10 @@ import '../../Providers/user.dart';
 class ForgotPassword extends StatefulWidget {
   static String id = 'forgot-password';
 
+  const ForgotPassword({Key? key}) : super(key: key);
+
   @override
+  // ignore: library_private_types_in_public_api
   _ForgotPasswordState createState() => _ForgotPasswordState();
 }
 
@@ -26,7 +29,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
       content: Text(
         message,
         textAlign: TextAlign.center,
-        style: TextStyle(
+        style: const TextStyle(
           color: Colors.black,
           fontSize: 17,
 
@@ -34,8 +37,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
       ),
       backgroundColor: Colors.white,
       behavior: SnackBarBehavior.floating,
-      padding: EdgeInsets.symmetric(vertical: 5.0,horizontal: 10.0),
-      shape: RoundedRectangleBorder(
+      padding: const EdgeInsets.symmetric(vertical: 5.0,horizontal: 10.0),
+      shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(20))),
 
     );
@@ -43,13 +46,13 @@ class _ForgotPasswordState extends State<ForgotPassword> {
       backgroundColor: Colors.lightBlueAccent,
       body: Form(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30.0),
+          padding: const EdgeInsets.symmetric(horizontal: 30.0),
           child: Form(
             key: _formKey,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   'Your Email',
                   style: TextStyle(fontSize: 30, color: Colors.white),
                 ),
@@ -57,8 +60,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   onChanged: (val){
                     email = val;
                   },
-                  style: TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
+                  style: const TextStyle(color: Colors.white),
+                  decoration: const InputDecoration(
                     labelText: 'Email',
                     icon: Icon(
                       Icons.mail,
@@ -78,15 +81,17 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 ElevatedButton(
-                  child: Text('Send Email'),
+                  child: const Text('Send Email'),
                   onPressed: () async{
+                    // ignore: prefer_adjacent_string_concatenation
                     if(email.contains("@"+".") ){
                       await user.passwordReset(email);
                       setState(() {
                         message = 'A reset password link has just been sent to your email';
                       });
+                      // ignore: use_build_context_synchronously
                       ScaffoldMessenger.of(context).showSnackBar(snackBar);
                     }
                     else{
@@ -101,9 +106,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   },
                 ),
                 TextButton(
-                  child: Text('Sign In'),
+                  child: const Text('Sign In'),
                   onPressed: () {
-                    Navigator.push(context,MaterialPageRoute(builder: (c)=>SignIn()));
+                    Navigator.push(context,MaterialPageRoute(builder: (c)=>const SignIn()));
                   },
                 )
               ],
