@@ -32,7 +32,7 @@ class DiaryEntryModel{
   DiaryEntryModel.fromMap(Map data) {
     _id = data[ID];
     _entryText = data[ENTRY_TEXT];
-    _dateTime = data[DATE_TIME];
+    _dateTime = DateTime.fromMicrosecondsSinceEpoch(data[DATE_TIME].microsecondsSinceEpoch);
     _emotion = data[EMOTION];
   }
 
