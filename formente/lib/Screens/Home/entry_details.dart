@@ -16,18 +16,46 @@ class _EntryDetailsState extends State<EntryDetails> {
     return Scaffold(
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 50,horizontal: 20),
+        height: MediaQuery.of(context).size.height,
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                colors:[Color(0xff2AB5E1),Color(0xff19C5FC).withOpacity(0.2)],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter
+            )
+        ),
         child: Column(
           children: [
-            Container(
-              child: Text(
-                "${widget.formattedDate}\n${widget.formattedTime}"
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                    widget.formattedDate,
+                  style: TextStyle(
+                    fontSize: 20
+                  ),
+                ),
+                Text(
+                  widget.formattedTime,
+                  style: TextStyle(
+                    fontSize: 20
+                  ),
+                )
+              ],
             ),
             SizedBox(height: 40,),
             SingleChildScrollView(
               child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color:Color(0xff2AB5E1).withOpacity(0.5)),
+                  color: Colors.white.withOpacity(0.6)
+                ),
                 child: Text(
-                  "${widget.entryText}"
+                  "${widget.entryText}",
+                  style: TextStyle(
+                    fontSize: 16
+                  ),
                 ),
               ),
             )

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:formente/Models/diary_entry.dart';
-import 'package:intl/intl.dart';
 
 import 'entry_details.dart';
 
@@ -31,7 +30,6 @@ class _DiaryEntryTileState extends State<DiaryEntryTile> {
   List isDay = ['AM','PM'];
   @override
   Widget build(BuildContext context) {
-
     String formattedDate = "${widget.entry.dateTime?.day}, ${monthMap[widget.entry.dateTime?.month]} ${widget.entry.dateTime?.year}";
     String formattedTime = "${widget.entry.dateTime!.hour%12} : ${widget.entry.dateTime?.minute} ${isDay[widget.entry.dateTime!.hour~/12]}";
 
