@@ -67,7 +67,7 @@ class UserProvider with ChangeNotifier {
           'number': '',
           'bio': '',
           'userImage': '',
-          'entries' : []
+          'diaryEntries' : []
         });
         _userModel = await _userServices.getUserById(user.user!.uid);
         notifyListeners();
