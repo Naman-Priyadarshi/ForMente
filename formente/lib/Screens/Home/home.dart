@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:formente/Providers/user.dart';
-import 'package:formente/Screens/Home/addDiaryEntry.dart';
-import 'package:formente/Screens/Home/showEntries.dart';
+import 'package:formente/Screens/Home/add_diary_entry.dart';
+import 'package:formente/Screens/Home/show_entries.dart';
 import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {

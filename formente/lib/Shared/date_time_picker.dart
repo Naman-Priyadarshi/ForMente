@@ -19,6 +19,7 @@ class _DateTimePickerState extends State<DateTimePicker> {
   double? _height;
   double? _width;
 
+  // ignore: unused_field
   String? _setTime, _setDate;
 
   String? _hour, _minute, _time;

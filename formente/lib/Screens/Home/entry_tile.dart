@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:formente/Models/diaryEntry.dart';
+import 'package:formente/Models/diary_entry.dart';
 
 class DiaryEntryTile extends StatefulWidget {
   final DiaryEntryModel entry;

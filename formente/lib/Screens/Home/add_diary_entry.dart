@@ -2,12 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
-import 'package:formente/Models/diaryEntry.dart';
+import 'package:formente/Models/diary_entry.dart';
 import 'package:formente/Providers/user.dart';
 import 'package:formente/Services/user.dart';
 import 'package:provider/provider.dart';
 
-import '../../Shared/date_time_picker.dart';
 
 class AddDiaryEntry extends StatefulWidget {
   const AddDiaryEntry({Key? key}) : super(key: key);

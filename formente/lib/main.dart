@@ -41,13 +41,13 @@ class ScreensController extends StatelessWidget {
       case Status.Uninitialized:
         return Container();
       case Status.Unauthenticated:
-        return Authenticate();
+        return const Authenticate();
       case Status.Authenticating:
-        return Authenticate();
+        return const Authenticate();
       case Status.Authenticated:
         return const Home();
       default:
-        return Authenticate();
+        return const Authenticate();
     }
   }
 }

@@ -5,7 +5,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:formente/Models/diaryEntry.dart';
+import 'package:formente/Models/diary_entry.dart';
 import 'package:formente/Models/user.dart';
 
 import '../Services/user.dart';

@@ -3,7 +3,7 @@
 import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:formente/Models/diaryEntry.dart';
+import 'package:formente/Models/diary_entry.dart';
 
 import '../Models/user.dart';
 
