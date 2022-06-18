@@ -19,7 +19,7 @@ class _EntryDetailsState extends State<EntryDetails> {
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
             gradient: LinearGradient(
-                colors:[Color(0xff2AB5E1),Color(0xff19C5FC).withOpacity(0.2)],
+                colors:[Color(0xff2AB5E1),Color(0xff19C5FC).withOpacity(0.5)],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter
             )
@@ -32,13 +32,15 @@ class _EntryDetailsState extends State<EntryDetails> {
                 Text(
                     widget.formattedDate,
                   style: TextStyle(
-                    fontSize: 20
+                    fontSize: 20,
+                    color: Colors.white
                   ),
                 ),
                 Text(
                   widget.formattedTime,
                   style: TextStyle(
-                    fontSize: 20
+                    fontSize: 20,
+                    color: Colors.white
                   ),
                 )
               ],
@@ -46,6 +48,8 @@ class _EntryDetailsState extends State<EntryDetails> {
             SizedBox(height: 40,),
             SingleChildScrollView(
               child: Container(
+                padding: EdgeInsets.symmetric(vertical: 30,horizontal: 15),
+                width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(color:Color(0xff2AB5E1).withOpacity(0.5)),
