@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print, unused_field
+
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:formente/Models/diaryEntry.dart';
@@ -15,7 +17,7 @@ class AddDiaryEntry extends StatefulWidget {
 }
 
 class _AddDiaryEntryState extends State<AddDiaryEntry> {
-  DateTime _current = DateTime.now();
+  final DateTime _current = DateTime.now();
   int _year = DateTime.now().year;
   int _month = DateTime.now().month;
   int _day = DateTime.now().day;
@@ -27,7 +29,7 @@ class _AddDiaryEntryState extends State<AddDiaryEntry> {
   DiaryEntryModel? entry;
   final _formkey = GlobalKey<FormState>();
   String _entryText = "";
-  UserServices _userServices = UserServices();
+  final UserServices _userServices = UserServices();
 
   @override
   void initState() {
@@ -43,7 +45,7 @@ class _AddDiaryEntryState extends State<AddDiaryEntry> {
           height: MediaQuery.of(context).size.height,
           decoration: BoxDecoration(
               gradient: LinearGradient(
-                  colors:[Color(0xff2AB5E1),Color(0xff19C5FC).withOpacity(0.2)],
+                  colors:[const Color(0xff2AB5E1),const Color(0xff19C5FC).withOpacity(0.2)],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter
               )
@@ -61,7 +63,7 @@ class _AddDiaryEntryState extends State<AddDiaryEntry> {
                       filled: true,
                       hintText: 'Enter Diary entry text',
                       border: InputBorder.none,
-                      focusedBorder: OutlineInputBorder(
+                      focusedBorder: const OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(5.0)),
                           borderSide: BorderSide(color: Colors.blue)),
                     ),
@@ -72,11 +74,11 @@ class _AddDiaryEntryState extends State<AddDiaryEntry> {
                     },
                     maxLines: 5,
                   ),
-                  SizedBox(height: 20,),
+                  const SizedBox(height: 20,),
                   GestureDetector(
                     onTap: () {
                       DatePicker.showDatePicker(context,
-                        theme: DatePickerTheme(
+                        theme: const DatePickerTheme(
                           containerHeight: 210.0,
                         ),
                         showTitleActions: true,
@@ -93,26 +95,27 @@ class _AddDiaryEntryState extends State<AddDiaryEntry> {
                         locale: LocaleType.en,
                       );
                     },
+                    // ignore: avoid_unnecessary_containers
                     child: Container(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(
+                          const Icon(
                             Icons.calendar_month_rounded
                           ),
-                          SizedBox(width: 20,),
+                          const SizedBox(width: 20,),
                           Text(
-                            "${_day} - ${_month} - ${_year}"
+                            "$_day - $_month - $_year"
                           ),
                         ],
                       ),
                     ),
                   ),
-                  SizedBox(height: 20,),
+                  const SizedBox(height: 20,),
                   GestureDetector(
                     onTap: () {
                       DatePicker.showTimePicker(context,
-                          theme: DatePickerTheme(
+                          theme: const DatePickerTheme(
                             containerHeight: 210.0,
                           ),
                           showTitleActions: true, onConfirm: (time) {
@@ -124,30 +127,32 @@ class _AddDiaryEntryState extends State<AddDiaryEntry> {
                           }, currentTime: DateTime.now(), locale: LocaleType.en);
                       setState(() {});
                     },
+                    // ignore: avoid_unnecessary_containers
                     child: Container(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(
+                          const Icon(
                               Icons.access_time
                           ),
-                          SizedBox(width: 20,),
+                          const SizedBox(width: 20,),
                           Text(
-                              "${_hour} : ${_minute} : ${_second}"
+                              "$_hour : $_minute : $_second"
                           ),
                         ],
                       ),
                     ),
                   ),
-                  SizedBox(height: 30,),
+                  const SizedBox(height: 30,),
                   ElevatedButton(
                       onPressed: ()async{
                         DiaryEntryModel entry = DiaryEntryModel(_entryText, DateTime(_year,_month,_day,_hour,_minute,_second));
                         await userProvider.addToEntries(diaryEntry: entry);
                         print("Added to entries!");
+                        // ignore: use_build_context_synchronously
                         Navigator.pop(context);
                       },
-                      child: Text("Add Entry"),
+                      child: const Text("Add Entry"),
                   )
                 ],
               ),

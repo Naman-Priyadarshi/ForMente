@@ -13,7 +13,7 @@ class _DiaryEntryTileState extends State<DiaryEntryTile> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       child: ListTile(
         title: Text("${widget.entry.dateTime}"),
         subtitle: Text("${widget.entry.entryText}"),

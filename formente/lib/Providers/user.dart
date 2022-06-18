@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -45,7 +47,6 @@ class UserProvider with ChangeNotifier {
     } catch (e) {
       _status = Status.Unauthenticated;
       notifyListeners();
-      // ignore: avoid_print
       print(e.toString());
       return false;
     }
@@ -58,7 +59,6 @@ class UserProvider with ChangeNotifier {
       await _auth
           .createUserWithEmailAndPassword(email: email, password: password)
           .then((user) async {
-        // ignore: avoid_print
         print("CREATE USER");
         await _userServices.createUser({
           'name': name,
@@ -76,7 +76,6 @@ class UserProvider with ChangeNotifier {
     } catch (e) {
       _status = Status.Unauthenticated;
       notifyListeners();
-      // ignore: avoid_print
       print(e.toString());
       return false;
     }
@@ -84,7 +83,6 @@ class UserProvider with ChangeNotifier {
 
   Future<bool> updateUser(String name, String email, String number, String bio) async {
     try {
-      // ignore: avoid_print
       print("CREATE USER");
       await _userServices.createUser({
         'name': name,
@@ -101,7 +99,6 @@ class UserProvider with ChangeNotifier {
     } catch (e) {
       _status = Status.Unauthenticated;
       notifyListeners();
-      // ignore: avoid_print
       print(e.toString());
       return false;
     }

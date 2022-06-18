@@ -1,3 +1,5 @@
+// ignore_for_file: must_call_super, avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:formente/Models/diaryEntry.dart';
 import 'package:formente/Screens/Home/entry_tile.dart';

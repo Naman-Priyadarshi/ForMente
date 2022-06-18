@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors, non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -50,9 +52,9 @@ class _RegisterState extends State<Register> {
               color: Colors.black,
             ),
           ),
-          backgroundColor: Color(0xff2AB5E1),
+          backgroundColor: const Color(0xff2AB5E1),
           elevation: 0,
-          leading: Icon(Icons.person_add_alt_1,color: Colors.black,),
+          leading: const Icon(Icons.person_add_alt_1,color: Colors.black,),
           actions: [
             TextButton.icon(
                 style: TextButton.styleFrom(
@@ -61,11 +63,11 @@ class _RegisterState extends State<Register> {
                 onPressed: () {
                   widget.Toggle();
                 },
-                icon: Icon(
+                icon: const Icon(
                   Icons.person,
                   color: Colors.black,
                 ),
-                label: Text(
+                label: const Text(
                   'Sign In',
                   style: TextStyle(
                     color: Colors.black,
@@ -81,32 +83,32 @@ class _RegisterState extends State<Register> {
                 height: MediaQuery.of(context).size.height,
                 decoration: BoxDecoration(
                     gradient: LinearGradient(
-                        colors:[Color(0xff2AB5E1),Color(0xff19C5FC).withOpacity(0.2)],
+                        colors:[const Color(0xff2AB5E1),const Color(0xff19C5FC).withOpacity(0.2)],
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter
                     )
                 ),
-                padding: EdgeInsets.symmetric(horizontal: 10.0,vertical: 0.0),
+                padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 0.0),
                 child: Form(
                   key: _formkey,
                   child: Column(
                     children: [
-                      SizedBox(height: 50,),
+                      const SizedBox(height: 50,),
                       Image.asset(
                         "assets/logo_big.png",
                         height: 50,
                       ),
 
-                      SizedBox(height: 20,),
+                      const SizedBox(height: 20,),
                       Container(
                         decoration: BoxDecoration(
                             color: Colors.white.withOpacity(0.6),
-                            borderRadius: new BorderRadius.circular(10.0)
+                            borderRadius: BorderRadius.circular(10.0)
                         ),
-                        padding: EdgeInsets.all(8),
-                        margin: EdgeInsets.all(0),
+                        padding: const EdgeInsets.all(8),
+                        margin: const EdgeInsets.all(0),
                         child: TextFormField(
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             hintText: 'Enter your Name',
                             border: InputBorder.none,
                             focusedBorder: OutlineInputBorder(
@@ -125,18 +127,18 @@ class _RegisterState extends State<Register> {
                         ),
 
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Container(
                         decoration: BoxDecoration(
                             color: Colors.white.withOpacity(0.6),
-                            borderRadius: new BorderRadius.circular(10.0)
+                            borderRadius: BorderRadius.circular(10.0)
                         ),
-                        padding: EdgeInsets.all(8),
-                        margin: EdgeInsets.all(0),
+                        padding: const EdgeInsets.all(8),
+                        margin: const EdgeInsets.all(0),
                         child: TextFormField(
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             hintText: 'Enter your Email ID',
                             border: InputBorder.none,
                             focusedBorder: OutlineInputBorder(
@@ -154,18 +156,18 @@ class _RegisterState extends State<Register> {
                           textAlignVertical: TextAlignVertical.center,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Container(
                         decoration: BoxDecoration(
                             color: Colors.white.withOpacity(0.6),
-                            borderRadius: new BorderRadius.circular(10.0)
+                            borderRadius: BorderRadius.circular(10.0)
                         ),
                         child: ListTile(
-                          contentPadding: EdgeInsets.all(8),
+                          contentPadding: const EdgeInsets.all(8),
                           title: TextFormField(
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               hintText: 'Enter your password',
                               border: InputBorder.none,
                               focusedBorder: OutlineInputBorder(
@@ -199,18 +201,18 @@ class _RegisterState extends State<Register> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Container(
-                          padding: EdgeInsets.all(8),
-                          margin: EdgeInsets.all(0.0),
+                          padding: const EdgeInsets.all(8),
+                          margin: const EdgeInsets.all(0.0),
                           decoration: BoxDecoration(
                               color: Colors.white.withOpacity(0.6),
-                              borderRadius: new BorderRadius.circular(10.0)
+                              borderRadius: BorderRadius.circular(10.0)
                           ),
                           child: TextFormField(
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               hintText: 'Confirm your password',
                               border: InputBorder.none,
                               focusedBorder: OutlineInputBorder(
@@ -223,7 +225,7 @@ class _RegisterState extends State<Register> {
                             obscureText: true,
                           )
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       ElevatedButton(
@@ -239,10 +241,11 @@ class _RegisterState extends State<Register> {
                                 message = 'Could not Register \n Please supply a valid email';
                               });
                             }
+                            // ignore: use_build_context_synchronously
                             ScaffoldMessenger.of(context).showSnackBar(snackBar);
                           }
                         },
-                        child: Text(
+                        child: const Text(
                           'Join ForMente!',
                           style: TextStyle(
                             color: Colors.black,
@@ -251,8 +254,8 @@ class _RegisterState extends State<Register> {
                         ),
 
                       ),
-                      SizedBox(height: 40,),
-                      Text(
+                      const SizedBox(height: 40,),
+                      const Text(
                         "By CitizenFive",
                         style: TextStyle(
                             fontSize: 10,

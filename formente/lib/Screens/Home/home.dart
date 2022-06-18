@@ -18,32 +18,32 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: Column(
         children: [
-          SizedBox(height: 50,),
+          const SizedBox(height: 50,),
           ElevatedButton(
               onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>ShowEntries()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const ShowEntries()));
               },
-              child: Text("Get user entries"),
+              child: const Text("Get user entries"),
           ),
-          SizedBox(height: 50,),
+          const SizedBox(height: 50,),
           ElevatedButton(
               onPressed: ()async{
                 await userProvider.signOut();
               },
-              child: Text("Sign Out")
+              child: const Text("Sign Out")
           ),
           ElevatedButton(
               onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>AddDiaryEntry()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const AddDiaryEntry()));
               },
-              child: Text("Add new entry")
+              child: const Text("Add new entry")
           ),
 
         ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context)=>AddDiaryEntry()));
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>const AddDiaryEntry()));
         },
       ),
     );
