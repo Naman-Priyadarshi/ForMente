@@ -46,4 +46,6 @@ jobs:
           cd formente
           flutter pub get
       - name: Build APK
-        run: flutter build apk
+        run: |
+          cd formente
+          flutter build apk
