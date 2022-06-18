@@ -1,4 +1,8 @@
-# RedBrick Hacks 2022 Submission Repository
+# ForMente
+
+[![build-checks](https://github.com/redbrickhacks/redbrickhacks-2022-submission-citizenfive/actions/workflows/ci.yml/badge.svg)](https://github.com/redbrickhacks/redbrickhacks-2022-submission-citizenfive/actions/workflows/ci.yml)
+
+## RedBrick Hacks 2022 Submission Repository
 
 - Hacking starts at 11:00am (IST) on June 18th 2022
 - Hacking ends at sharp **11:00am (IST) on June 19th 2022**
