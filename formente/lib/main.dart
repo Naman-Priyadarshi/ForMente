@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:formente/Screens/splash_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'Providers/app.dart';
 import 'Providers/user.dart';
@@ -23,7 +24,13 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider.value(value: AppProvider()),
         ChangeNotifierProvider.value(value: UserProvider.initialize()),
       ],
-      child: const MaterialApp(
+      child: MaterialApp(
+        theme: ThemeData(
+          textTheme: GoogleFonts.barlowTextTheme(
+            Theme.of(context).textTheme,
+
+          ),
+        ),
         home: SplashScreen(),
         debugShowCheckedModeBanner:false,
       ),

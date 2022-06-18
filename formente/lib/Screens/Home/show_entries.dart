@@ -52,7 +52,8 @@ class _ShowEntriesState extends State<ShowEntries> {
                       gradient: LinearGradient(
                           colors: [
                             Color(0xff2AB5E1),
-                            Color(0xff19C5FC).withOpacity(0.2)
+                            Color(0xff19C5FC).withOpacity(0.5)
+
                           ],
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter
