@@ -10,7 +10,7 @@ class UserModel {
   static const NAME = "name";
   static const EMAIL = "email";
 
-  static const ENTRIES = "entries";
+  static const ENTRIES = "diaryEntries";
   static const NUMBER = 'number';
 
   static const USERIMAGE = 'userImage';

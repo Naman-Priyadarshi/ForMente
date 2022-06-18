@@ -7,17 +7,21 @@ class DiaryEntryModel{
   static const ID = "id";
   static const ENTRY_TEXT = "entryText";
   static const DATE_TIME = "dateTime";
+  static const EMOTION = "emotion";
 
 
   String? _id;
   String? _entryText;
   DateTime? _dateTime;
+  String? _emotion;
 
   String get id => _id!;
 
   String? get entryText => _entryText;
 
   DateTime? get dateTime => _dateTime;
+
+  String? get emotion => _emotion;
 
   DiaryEntryModel(String entryText, DateTime dateTime){
     _id = uuid.v1();
@@ -29,17 +33,20 @@ class DiaryEntryModel{
     _id = data[ID];
     _entryText = data[ENTRY_TEXT];
     _dateTime = data[DATE_TIME];
+    _emotion = data[EMOTION];
   }
 
   Map<String,dynamic> toMap() => {
     ID: _id,
     ENTRY_TEXT: _entryText,
     DATE_TIME: _dateTime,
+    EMOTION: _emotion,
   };
 
   DiaryEntryModel.fromSnapshot(DocumentSnapshot snapshot){
     _id = (snapshot.data()! as Map<String, dynamic>)[ID];
     _entryText = (snapshot.data()! as Map<String, dynamic>)[ENTRY_TEXT];
     _dateTime = (snapshot.data()! as Map<String, dynamic>)[DATE_TIME];
+    _emotion = (snapshot.data()! as Map<String, dynamic>)[EMOTION];
   }
 }
