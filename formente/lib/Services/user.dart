@@ -36,15 +36,14 @@ class UserServices {
         return UserModel.fromSnapshot(doc);
       });
 
-  void addToEntries({required String uid, required DiaryEntryModel post}){
+  void addToEntries({required String uid, required DiaryEntryModel diaryEntry}){
     _firestore.collection(collection).doc(uid).update({
-      "diaryEntries" : FieldValue.arrayUnion([post.toMap()])
+      "diaryEntries" : FieldValue.arrayUnion([diaryEntry.toMap()])
     });
-    print("debug check post added");
   }
-  void removeFromEntries({required String uid, required DiaryEntryModel post}){
+  void removeFromEntries({required String uid, required DiaryEntryModel diaryEntry}){
     _firestore.collection(collection).doc(uid).update({
-      "diaryEntries" : FieldValue.arrayRemove([post.toMap()])
+      "diaryEntries" : FieldValue.arrayRemove([diaryEntry.toMap()])
     });
   }
   Future<List<DiaryEntryModel>> getEntries({required String uid})async{
