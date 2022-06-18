@@ -30,7 +30,15 @@ class _HomeState extends State<Home> {
               onPressed: ()async{
                 await userProvider.signOut();
               },
-              child: Text("Sign Out"))
+              child: Text("Sign Out")
+          ),
+          ElevatedButton(
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>AddDiaryEntry()));
+              },
+              child: Text("Add new entry")
+          ),
+
         ],
       ),
       floatingActionButton: FloatingActionButton(
