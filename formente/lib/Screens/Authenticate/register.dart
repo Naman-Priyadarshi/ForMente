@@ -50,7 +50,7 @@ class _RegisterState extends State<Register> {
               color: Colors.black,
             ),
           ),
-          backgroundColor: Colors.brown[300],
+          backgroundColor: Color(0xff2AB5E1),
           elevation: 0,
           leading: Icon(Icons.person_add_alt_1,color: Colors.black,),
           actions: [
@@ -78,20 +78,25 @@ class _RegisterState extends State<Register> {
           body: SingleChildScrollView(
             child: Center(
               child: Container(
+                height: MediaQuery.of(context).size.height,
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        colors:[Color(0xff2AB5E1),Color(0xff19C5FC).withOpacity(0.2)],
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter
+                    )
+                ),
                 padding: EdgeInsets.symmetric(horizontal: 10.0,vertical: 0.0),
                 child: Form(
                   key: _formkey,
                   child: Column(
                     children: [
-                      Text(
-                        'Welcome to \nForMente',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 30.0,
-                          fontFamily: 'NewTegomin',
-                          fontWeight: FontWeight.bold,
-                        ),
+                      SizedBox(height: 50,),
+                      Image.asset(
+                        "assets/logo_big.png",
+                        height: 50,
                       ),
+
                       SizedBox(height: 20,),
                       Container(
                         decoration: BoxDecoration(
@@ -238,7 +243,7 @@ class _RegisterState extends State<Register> {
                           }
                         },
                         child: Text(
-                          'Register',
+                          'Join ForMente!',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 17.0,
@@ -246,8 +251,14 @@ class _RegisterState extends State<Register> {
                         ),
 
                       ),
-                      SizedBox(height: 30.0,),
-                      // Text(
+                      SizedBox(height: 40,),
+                      Text(
+                        "By CitizenFive",
+                        style: TextStyle(
+                            fontSize: 10,
+                            color: Colors.white
+                        ),
+                      )                      // Text(
                       //   error,
                       //   textAlign: TextAlign.center,
                       //   style: TextStyle(

@@ -31,31 +31,15 @@ class _SignInState extends State<SignIn> {
     final user = Provider.of<UserProvider>(context);
     
     return Scaffold(
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.redAccent,
-          title: Text('Sign In'),
-          actions: [
-            TextButton.icon(
-                style: TextButton.styleFrom(
-                  primary: Colors.black,
-                ),
-                onPressed: () {
-                  widget.Toggle!();
-                },
-                icon: Icon(
-                  Icons.person_add_alt_1,
-                  color: Colors.white,
-                ),
-                label: Text(
-                  'Register',
-                  style: TextStyle(
-                      color: Colors.white
-                  ),
-                ))
-          ],
-        ),
         body: Container(
+          height: MediaQuery.of(context).size.height,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors:[Color(0xff2AB5E1),Color(0xff19C5FC).withOpacity(0.2)],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter
+            )
+          ),
           padding: EdgeInsets.symmetric(
             vertical: 5.0,
             horizontal: 30,
@@ -65,14 +49,10 @@ class _SignInState extends State<SignIn> {
               key: _formkey,
               child: Column(
                 children: [
-                  Text(
-                    'Alike Minds',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 30.0,
-                      fontFamily: 'NewTegomin',
-                      fontWeight: FontWeight.bold,
-                    ),
+                  SizedBox(height: 150,),
+                  Image.asset(
+                      "assets/logo_big.png",
+                    height: 50,
                   ),
                   SizedBox(
                     height: 30,
@@ -147,31 +127,34 @@ class _SignInState extends State<SignIn> {
                   SizedBox(
                     height: 20,
                   ),
-                  ElevatedButton(
-                    onPressed: (){
+                  CircleAvatar(
+                    child: IconButton(
+                        onPressed: ()async{
+                          if(_formkey.currentState!.validate()){
+                            dynamic result = await user.signIn(email, password);
+                            if(result==null){
+                              setState(() {
+                                error = 'Could not Sign In \n Please supply valid Credentials';
+                              });
+
+                            }
+                          }
+                        },
+                        icon: Icon(Icons.arrow_forward_outlined)
+                    ),
+                  ),
+                  SizedBox(height: 20,),
+                  GestureDetector(
+                    onTap: (){
                       Navigator.push(context, MaterialPageRoute(builder: (c)=>ForgotPassword()));
                     },
-                    child: Text("Forgot password"),
-                  ),
-                  ElevatedButton(
-                      onPressed: ()async{
-                        if(_formkey.currentState!.validate()){
-                          dynamic result = await user.signIn(email, password);
-                          if(result==null){
-                            setState(() {
-                              error = 'Could not Sign In \n Please supply valid Credentials';
-                            });
-
-                          }
-                        }
-                      },
-                      child: Text(
-                        'Sign In',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 17.0,
-                        ),
-                      )
+                    child: Text(
+                      "Forgot Password?",
+                      style: TextStyle(
+                        color: Colors.white,
+                        decoration: TextDecoration.underline
+                      ),
+                    ),
                   ),
                   SizedBox(height: 30.0,),
                   Text(
@@ -190,7 +173,25 @@ class _SignInState extends State<SignIn> {
                         fontSize: 20.0
                     ),
                   ),
-                  SizedBox(height: 50),
+                  SizedBox(height: 70),
+                  Text(
+                    "Don't have one?"
+                  ),
+                  ElevatedButton(
+                      onPressed: (){
+                        widget.Toggle!();
+                      },
+                      child: Text("Create an account")),
+                  SizedBox(height: 40,),
+                  Text(
+                    "By CitizenFive",
+                    style: TextStyle(
+                      fontSize: 10,
+                      color: Colors.white
+                    ),
+                  )
+
+
                   // ElevatedButton(
                   //     onPressed: ()async{
                   //       if(_formkey.currentState!.validate()){
