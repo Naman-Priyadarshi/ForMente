@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1049793808873",
+    "project_id": "formente-9cdd6",
+    "storage_bucket": "formente-9cdd6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1049793808873:android:5ee0bccd28d99636f02378",
+        "android_client_info": {
+          "package_name": "com.citizenfive.formente"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1049793808873-9d114aic6i32ucj0j77i2rvllnirv8ge.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.citizenfive.formente",
+            "certificate_hash": "b51c37c98570927a1e4932e4e2e814c6d6bc57ab"
+          }
+        },
+        {
+          "client_id": "1049793808873-o2qmgrbeak8frc0m30s7523rovejmb0q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuD3ITekOZpstHQAxZ1yJTEYOcBH6e4m4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1049793808873-o2qmgrbeak8frc0m30s7523rovejmb0q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
