@@ -6,6 +6,8 @@ import 'package:formente/Models/diary_entry.dart';
 import 'package:formente/Providers/user.dart';
 import 'package:formente/Services/user.dart';
 import 'package:provider/provider.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert' as convert;
 
 
 class AddDiaryEntry extends StatefulWidget {
@@ -146,6 +148,21 @@ class _AddDiaryEntryState extends State<AddDiaryEntry> {
                   const SizedBox(height: 30,),
                   ElevatedButton(
                       onPressed: ()async{
+
+                        var queryParameters = {
+                          'text': _entryText,
+                        };
+
+                        var url = Uri.https('formente.herokuapp.com', '/predict', queryParameters);
+                        var response = await http.get(url);
+                        if (response.statusCode == 200) {
+                          var jsonResponse =
+                          convert.jsonDecode(response.body) as Map<String, dynamic>;
+                          print('Emotion: ${jsonResponse["category"]}.');
+                        } else {
+                          print('Request failed with status: ${response.statusCode}.');
+                        }
+
                         DiaryEntryModel entry = DiaryEntryModel(_entryText, DateTime(_year,_month,_day,_hour,_minute,_second));
                         await userProvider.addToEntries(diaryEntry: entry);
                         print("Added to entries!");
