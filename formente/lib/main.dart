@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:formente/Screens/Home/dashboard.dart';
 import 'package:formente/Screens/splash_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -52,7 +53,7 @@ class ScreensController extends StatelessWidget {
       case Status.Authenticating:
         return const Authenticate();
       case Status.Authenticated:
-        return const Home();
+        return Dashboard();
       default:
         return const Authenticate();
     }
