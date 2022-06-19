@@ -1,6 +1,7 @@
-// ignore_for_file: avoid_print, unused_field
+// ignore_for_file: avoid_print, unused_field, use_build_context_synchronously
 
 import 'dart:convert';
+import 'dart:convert' as convert;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
@@ -9,8 +10,6 @@ import 'package:formente/Providers/user.dart';
 import 'package:formente/Services/user.dart';
 import 'package:http/http.dart';
 import 'package:provider/provider.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert' as convert;
 
 
 class AddDiaryEntry extends StatefulWidget {
