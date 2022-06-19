@@ -3,9 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:formente/Screens/Home/show_entries.dart';
-import 'package:provider/provider.dart';
 
-import '../../Providers/user.dart';
 import 'add_diary_entry.dart';
 import 'drawer.dart';
 

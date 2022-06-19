@@ -148,6 +148,7 @@ class _AddDiaryEntryState extends State<AddDiaryEntry> {
                   ),
                   const SizedBox(height: 30,),
                   ElevatedButton(
+                      // ignore: duplicate_ignore
                       onPressed: ()async{
 
                         var url = Uri.parse('https://formente.herokuapp.com/predict');
@@ -181,7 +182,6 @@ class _AddDiaryEntryState extends State<AddDiaryEntry> {
                           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Some error occured'),));
                         }
                         print("Added to entries!");
-                        // ignore: use_build_context_synchronously
                         Navigator.pop(context);
                       },
                       child: const Text("Add Entry"),
