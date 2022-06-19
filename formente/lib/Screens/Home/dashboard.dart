@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 
 import '../../Providers/user.dart';
 import 'add_diary_entry.dart';
+import 'drawer.dart';
 
 
 class Dashboard extends StatefulWidget {
@@ -39,6 +40,7 @@ class _DashboardState extends State<Dashboard> {
       DashboardItem("We’re all different. It’s much healthier to accept that you’re unique than to wish you were more like someone else."),
     ];
     return Scaffold(
+      drawer: AppDrawer(),
       appBar: AppBar(
         backgroundColor: Colors.indigo,
         elevation: 0,
