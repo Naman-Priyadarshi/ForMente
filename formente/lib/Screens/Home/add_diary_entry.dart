@@ -1,6 +1,7 @@
-// ignore_for_file: avoid_print, unused_field
+// ignore_for_file: avoid_print, unused_field, use_build_context_synchronously
 
 import 'dart:convert';
+import 'dart:convert' as convert;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
@@ -9,8 +10,6 @@ import 'package:formente/Providers/user.dart';
 import 'package:formente/Services/user.dart';
 import 'package:http/http.dart';
 import 'package:provider/provider.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert' as convert;
 
 
 class AddDiaryEntry extends StatefulWidget {
@@ -149,6 +148,7 @@ class _AddDiaryEntryState extends State<AddDiaryEntry> {
                   ),
                   const SizedBox(height: 30,),
                   ElevatedButton(
+                      // ignore: duplicate_ignore
                       onPressed: ()async{
 
                         var url = Uri.parse('https://formente.herokuapp.com/predict');
@@ -176,12 +176,12 @@ class _AddDiaryEntryState extends State<AddDiaryEntry> {
 
                         DiaryEntryModel entry = DiaryEntryModel(_entryText, DateTime(_year,_month,_day,_hour,_minute,_second));
                         bool success = await userProvider.addToEntries(diaryEntry: entry);
-                        if(success)
-                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Diary Entry was recoreded!'),));
-                        else
-                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Some error occured'),));
+                        if(success) {
+                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Diary Entry was recoreded!'),));
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Some error occured'),));
+                        }
                         print("Added to entries!");
-                        // ignore: use_build_context_synchronously
                         Navigator.pop(context);
                       },
                       child: const Text("Add Entry"),

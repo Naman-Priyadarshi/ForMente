@@ -1,15 +1,16 @@
+// ignore_for_file: import_of_legacy_library_into_null_safe, non_constant_identifier_names
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:formente/Screens/Home/show_entries.dart';
-import 'package:provider/provider.dart';
 
-import '../../Providers/user.dart';
 import 'add_diary_entry.dart';
 import 'drawer.dart';
 
 
 class Dashboard extends StatefulWidget {
+  const Dashboard({Key? key}) : super(key: key);
+
   @override
   State<Dashboard> createState() => _DashboardState();
 }
@@ -25,7 +26,6 @@ class _DashboardState extends State<Dashboard> {
 
   @override
   Widget build(BuildContext context) {
-    UserProvider userProvider = Provider.of<UserProvider>(context);
 
     List<Widget> dashboardItemList = [
       DashboardItem("The way we think, feel and behave are linked. Sometimes we develop patterns of thoughts or behaviours that are unhelpful so recognising them, and taking steps to think about things differently, can improve your mental health and wellbeing.", ),
@@ -40,9 +40,9 @@ class _DashboardState extends State<Dashboard> {
       DashboardItem("We’re all different. It’s much healthier to accept that you’re unique than to wish you were more like someone else."),
     ];
     return Scaffold(
-      drawer: AppDrawer(),
+      drawer: const AppDrawer(),
       appBar: AppBar(
-        backgroundColor: Color(0xff2AB5E1),
+        backgroundColor: const Color(0xff2AB5E1),
         elevation: 0,
       ),
       body: Container(
