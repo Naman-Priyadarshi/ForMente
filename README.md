@@ -1,4 +1,10 @@
-# ForMente
+# ForMente by CitizenFive
+
+<p align="center">
+
+  <img src="https://user-images.githubusercontent.com/77211855/174463614-67e3461b-6351-4307-be7a-10e1465b7e64.png" height=400/>
+</p>
+ 
 
 [![build-checks](https://github.com/redbrickhacks/redbrickhacks-2022-submission-citizenfive/actions/workflows/ci.yml/badge.svg)](https://github.com/redbrickhacks/redbrickhacks-2022-submission-citizenfive/actions/workflows/ci.yml)
 
