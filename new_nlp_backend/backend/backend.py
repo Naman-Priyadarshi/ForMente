@@ -25,10 +25,10 @@ def home():
 @app.post("/predict")
 async def predict(text: str):
 
-    count_vect = CountVectorizer()
-    extracted = count_vect.fit_transform([text])
-
+    vector = pickle.load(open("vector.pickle", 'rb'))
     model = pickle.load(open("model.pickle", 'rb'))
-    y_pred = model.predict(extracted)
 
-    return {"category": labels[y_pred]}
+    text_vector = vector.transform([text])
+    y_pred = model.predict(text_vector)
+
+    return {"category": labels[y_pred[0]]}
