@@ -18,7 +18,7 @@ class AboutUs extends StatelessWidget {
             )
         ),
         child: Text(
-            "ForMente by Citizenfive",
+            "Made by Citizenfive\n Akash Rajoria\n Naman Priyadarshi\n Paritosh Chaturvedi\n Pratham Chauhan\n Saransh Chopra",
           style: TextStyle(
               color: Colors.white,
             fontSize: 20
