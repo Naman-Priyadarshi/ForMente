@@ -166,7 +166,7 @@ class _DashboardState extends State<Dashboard> {
           const Padding(
               padding: EdgeInsets.only(top: 30,bottom: 10),
             child: Text(
-              "Tip of the Day!",
+              "Mental Health Tips!",
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 30
