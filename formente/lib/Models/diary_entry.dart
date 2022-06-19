@@ -25,10 +25,11 @@ class DiaryEntryModel{
 
   String? get emotion => _emotion;
 
-  DiaryEntryModel(String entryText, DateTime dateTime){
+  DiaryEntryModel(String entryText, DateTime dateTime, String emotion){
     _id = uuid.v1();
     _entryText = entryText;
     _dateTime = dateTime;
+    _emotion = emotion;
   }
 
   DiaryEntryModel.fromMap(Map data) {
