@@ -1,11 +1,16 @@
 // ignore_for_file: avoid_print, unused_field
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:formente/Models/diary_entry.dart';
 import 'package:formente/Providers/user.dart';
 import 'package:formente/Services/user.dart';
+import 'package:http/http.dart';
 import 'package:provider/provider.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert' as convert;
 
 
 class AddDiaryEntry extends StatefulWidget {
@@ -145,6 +150,30 @@ class _AddDiaryEntryState extends State<AddDiaryEntry> {
                   const SizedBox(height: 30,),
                   ElevatedButton(
                       onPressed: ()async{
+
+                        var url = Uri.parse('https://formente.herokuapp.com/predict');
+                        Map<String, String> body = {
+                          'text': _entryText,
+                        };
+                        final headers = {'Content-Type': 'application/json'};
+                        String jsonBody = json.encode(body);
+                        final encoding = Encoding.getByName('utf-8');
+
+                        Response response = await post(
+                          url,
+                          headers: headers,
+                          body: jsonBody,
+                          encoding: encoding,
+                        );
+
+                        if (response.statusCode == 200) {
+                          var jsonResponse =
+                          convert.jsonDecode(response.body) as Map<String, dynamic>;
+                          print('Emotion: ${jsonResponse["category"]}.');
+                        } else {
+                          print('Request failed with status: ${response.statusCode}.');
+                        }
+
                         DiaryEntryModel entry = DiaryEntryModel(_entryText, DateTime(_year,_month,_day,_hour,_minute,_second));
                         bool success = await userProvider.addToEntries(diaryEntry: entry);
                         if(success)

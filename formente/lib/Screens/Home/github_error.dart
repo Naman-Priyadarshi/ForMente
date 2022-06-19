@@ -20,7 +20,7 @@ class Giterror extends StatelessWidget {
           ),
           child: GestureDetector(
             onTap: ()=>launchUrl(Uri.parse('https://github.com/redbrickhacks/redbrickhacks-2022-submission-citizenfive/issues/new')),
-            child: Text(
+            child: const Text(
                 " Issues with Project? ",
                 style: TextStyle(
                     color: Colors.white,
