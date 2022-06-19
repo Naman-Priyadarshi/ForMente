@@ -64,7 +64,7 @@ class _RegisterState extends State<Register> {
                   key: _formkey,
                   child: Column(
                     children: [
-                      const SizedBox(height: 50,),
+                      const SizedBox(height: 100,),
                       Image.asset(
                         "assets/logo_big.png",
                         height: 50,
