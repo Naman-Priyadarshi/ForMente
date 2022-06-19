@@ -45,36 +45,6 @@ class _RegisterState extends State<Register> {
     );
 
     return Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            "Register",
-            style: TextStyle(
-              color: Colors.black,
-            ),
-          ),
-          backgroundColor: const Color(0xff2AB5E1),
-          elevation: 0,
-          leading: const Icon(Icons.person_add_alt_1,color: Colors.black,),
-          actions: [
-            TextButton.icon(
-                style: TextButton.styleFrom(
-                  primary: Colors.black,
-                ),
-                onPressed: () {
-                  widget.Toggle();
-                },
-                icon: const Icon(
-                  Icons.person,
-                  color: Colors.black,
-                ),
-                label: const Text(
-                  'Sign In',
-                  style: TextStyle(
-                    color: Colors.black,
-                  ),
-                ))
-          ],
-        ),
         body:Scaffold(
           backgroundColor: Colors.white,
           body: SingleChildScrollView(
@@ -256,6 +226,19 @@ class _RegisterState extends State<Register> {
 
                       ),
                       const SizedBox(height: 40,),
+                      GestureDetector(
+                        onTap:() {
+                          widget.Toggle();
+                          },
+                        child: const Text(
+                          "Already have an account?",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 30,),
                       const Text(
                         "By CitizenFive",
                         style: TextStyle(

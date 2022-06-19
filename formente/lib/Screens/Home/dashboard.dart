@@ -44,25 +44,11 @@ class _DashboardState extends State<Dashboard> {
       appBar: AppBar(
         backgroundColor: Colors.indigo,
         elevation: 0,
-        actions: [TextButton.icon(
-            onPressed: ()async{
-              await userProvider.signOut();
-            },
-            icon: const Icon(
-              Icons.person_outline_rounded,
-              color: Colors.white,),
-            label: const Text(
-              'Logout',
-              style: TextStyle(
-                color: Colors.white,
-              ),
-            ))
-        ],
       ),
       body: Container(
         decoration: BoxDecoration(
             gradient: LinearGradient(
-                colors: [Colors.indigo,Colors.indigo.withOpacity(0.4)],
+                colors:[const Color(0xff2AB5E1),const Color(0xff19C5FC).withOpacity(0.5)],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter
             )
