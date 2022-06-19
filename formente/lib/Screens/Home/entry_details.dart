@@ -4,7 +4,8 @@ class EntryDetails extends StatefulWidget {
   final String formattedDate;
   final String formattedTime;
   final String? entryText;
-  const EntryDetails({Key? key,required this.formattedDate,required this.formattedTime,required this.entryText, }) : super(key: key);
+  final String? emotion;
+  const EntryDetails({Key? key,required this.formattedDate,required this.formattedTime,required this.entryText,required this.emotion, }) : super(key: key);
 
   @override
   State<EntryDetails> createState() => _EntryDetailsState();
@@ -44,6 +45,14 @@ class _EntryDetailsState extends State<EntryDetails> {
                   ),
                 )
               ],
+            ),
+            const SizedBox(height: 20,),
+            Text(
+              "Emotion felt : ${widget.emotion}",
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 17
+              ),
             ),
             const SizedBox(height: 40,),
             SingleChildScrollView(

@@ -64,7 +64,7 @@ class _RegisterState extends State<Register> {
                   key: _formkey,
                   child: Column(
                     children: [
-                      const SizedBox(height: 50,),
+                      const SizedBox(height: 100,),
                       Image.asset(
                         "assets/logo_big.png",
                         height: 50,
@@ -211,9 +211,9 @@ class _RegisterState extends State<Register> {
                               setState(() {
                                 message = 'Could not Register \n Please supply a valid email';
                               });
+                              ScaffoldMessenger.of(context).showSnackBar(snackBar);
                             }
                             // ignore: use_build_context_synchronously
-                            ScaffoldMessenger.of(context).showSnackBar(snackBar);
                           }
                         },
                         child: const Text(

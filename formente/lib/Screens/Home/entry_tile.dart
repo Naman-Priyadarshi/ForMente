@@ -28,14 +28,16 @@ class _DiaryEntryTileState extends State<DiaryEntryTile> {
     12 : 'December'
   };
   List isDay = ['AM','PM'];
+
   @override
   Widget build(BuildContext context) {
     String formattedDate = "${widget.entry.dateTime?.day}, ${monthMap[widget.entry.dateTime?.month]} ${widget.entry.dateTime?.year}";
     String formattedTime = "${widget.entry.dateTime!.hour%12} : ${widget.entry.dateTime?.minute} ${isDay[widget.entry.dateTime!.hour~/12]}";
+    String? emotion = widget.entry.emotion;
 
     return GestureDetector(
       onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>EntryDetails(formattedDate: formattedDate,formattedTime: formattedTime,entryText: widget.entry.entryText,)));
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>EntryDetails(formattedDate: formattedDate,formattedTime: formattedTime,entryText: widget.entry.entryText,emotion: emotion,)));
       },
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 5,horizontal: 10),
@@ -49,7 +51,9 @@ class _DiaryEntryTileState extends State<DiaryEntryTile> {
           title: Text(
               "$formattedDate\n$formattedTime"
           ),
-          subtitle: Text(widget.entry.entryText!.length>10? "${ widget.entry.entryText!.substring(0,10)}... " : "${widget.entry.entryText}"),
+          subtitle: Text(
+              widget.entry.entryText!.length>10? "${ widget.entry.entryText!.substring(0,10)}... " : "${widget.entry.entryText}\nEmotion felt : $emotion"
+          ),
         ),
       ),
     );

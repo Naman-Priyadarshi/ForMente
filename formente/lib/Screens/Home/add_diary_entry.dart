@@ -32,6 +32,8 @@ class _AddDiaryEntryState extends State<AddDiaryEntry> {
   DiaryEntryModel? entry;
   final _formkey = GlobalKey<FormState>();
   String _entryText = "";
+  String _emotion = "";
+  String _emotionMessage = "";
   final UserServices _userServices = UserServices();
 
   @override
@@ -169,22 +171,33 @@ class _AddDiaryEntryState extends State<AddDiaryEntry> {
                         if (response.statusCode == 200) {
                           var jsonResponse =
                           convert.jsonDecode(response.body) as Map<String, dynamic>;
+                          setState((){
+                            _emotion = jsonResponse["category"];
+                            _emotionMessage = "You're feeling : ${jsonResponse["category"]}";
+                          });
                           print('Emotion: ${jsonResponse["category"]}.');
                         } else {
                           print('Request failed with status: ${response.statusCode}.');
                         }
 
-                        DiaryEntryModel entry = DiaryEntryModel(_entryText, DateTime(_year,_month,_day,_hour,_minute,_second));
+                        DiaryEntryModel entry = DiaryEntryModel(_entryText, DateTime(_year,_month,_day,_hour,_minute,_second),_emotion);
                         bool success = await userProvider.addToEntries(diaryEntry: entry);
                         if(success) {
-                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Diary Entry was recoreded!'),));
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Diary Entry was recorded!'),));
                         } else {
-                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Some error occured'),));
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Some error occured'),));
                         }
                         print("Added to entries!");
-                        Navigator.pop(context);
+                        // ignore: use_build_context_synchronously
                       },
                       child: const Text("Add Entry"),
+                  ),
+                  const SizedBox(height: 25,),
+                  Text(
+                    _emotionMessage,
+                    style: const TextStyle(
+                      fontSize: 20
+                    ),
                   )
                 ],
               ),
