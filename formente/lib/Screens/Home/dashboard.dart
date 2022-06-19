@@ -40,9 +40,9 @@ class _DashboardState extends State<Dashboard> {
       DashboardItem("We’re all different. It’s much healthier to accept that you’re unique than to wish you were more like someone else."),
     ];
     return Scaffold(
-      drawer: AppDrawer(),
+      drawer: const AppDrawer(),
       appBar: AppBar(
-        backgroundColor: Color(0xff2AB5E1),
+        backgroundColor: const Color(0xff2AB5E1),
         elevation: 0,
       ),
       body: Container(

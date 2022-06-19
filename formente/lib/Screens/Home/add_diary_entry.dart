@@ -147,10 +147,11 @@ class _AddDiaryEntryState extends State<AddDiaryEntry> {
                       onPressed: ()async{
                         DiaryEntryModel entry = DiaryEntryModel(_entryText, DateTime(_year,_month,_day,_hour,_minute,_second));
                         bool success = await userProvider.addToEntries(diaryEntry: entry);
-                        if(success)
-                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Diary Entry was recoreded!'),));
-                        else
-                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Some error occured'),));
+                        if(success) {
+                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Diary Entry was recoreded!'),));
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Some error occured'),));
+                        }
                         print("Added to entries!");
                         // ignore: use_build_context_synchronously
                         Navigator.pop(context);

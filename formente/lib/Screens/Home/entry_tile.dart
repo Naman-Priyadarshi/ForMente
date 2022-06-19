@@ -38,8 +38,8 @@ class _DiaryEntryTileState extends State<DiaryEntryTile> {
         Navigator.push(context, MaterialPageRoute(builder: (context)=>EntryDetails(formattedDate: formattedDate,formattedTime: formattedTime,entryText: widget.entry.entryText,)));
       },
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 5,horizontal: 10),
-        margin: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
+        padding: const EdgeInsets.symmetric(vertical: 5,horizontal: 10),
+        margin: const EdgeInsets.symmetric(vertical: 10,horizontal: 20),
         decoration: BoxDecoration(
           color: Colors.white.withOpacity(0.7),
           borderRadius: BorderRadius.circular(10),

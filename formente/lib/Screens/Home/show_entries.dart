@@ -33,9 +33,9 @@ class _ShowEntriesState extends State<ShowEntries> {
             return Scaffold(
               appBar: AppBar(
                   elevation: 0,
-                  backgroundColor: Color(0xff2AB5E1),
+                  backgroundColor: const Color(0xff2AB5E1),
                   leading: IconButton(
-                    icon: Icon(
+                    icon: const Icon(
                         Icons.arrow_back
                     ),
                     onPressed: () {
@@ -51,20 +51,20 @@ class _ShowEntriesState extends State<ShowEntries> {
                   decoration: BoxDecoration(
                       gradient: LinearGradient(
                           colors: [
-                            Color(0xff2AB5E1),
-                            Color(0xff19C5FC).withOpacity(0.5)
+                            const Color(0xff2AB5E1),
+                            const Color(0xff19C5FC).withOpacity(0.5)
 
                           ],
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter
                       )
                   ),
-                  padding: EdgeInsets.symmetric(vertical: 40, horizontal: 20),
+                  padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
                   child: Column(
                     children: [
                       Container(
-                        margin: EdgeInsets.only(bottom: 30),
-                        child: Text(
+                        margin: const EdgeInsets.only(bottom: 30),
+                        child: const Text(
                           "Recent Entries",
                           style: TextStyle(
                               fontSize: 30,
@@ -84,8 +84,9 @@ class _ShowEntriesState extends State<ShowEntries> {
                   )
               ),
             );
-          }else
+          }else {
             return Container();
+          }
         }
     );
   }
