@@ -25,8 +25,8 @@ def home():
 @app.post("/predict")
 async def predict(text: str):
 
-    vector = pickle.load(open("vector.pickle", 'rb'))
-    model = pickle.load(open("model.pickle", 'rb'))
+    vector = pickle.load(open("new_nlp_backend/vector.pickle", 'rb'))
+    model = pickle.load(open("new_nlp_backend/model.pickle", 'rb'))
 
     text_vector = vector.transform([text])
     y_pred = model.predict(text_vector)
