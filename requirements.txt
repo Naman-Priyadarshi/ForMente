@@ -1,5 +1,4 @@
 fastapi==0.70.0
 uvicorn==0.15.0
 numpy==1.21.4
-sklearn
-pickle
+scikit-learn==0.24.1
