@@ -18,7 +18,7 @@ class FindHelp extends StatelessWidget {
             )
         ),
         child: Text(
-          "Call on : +91 9999xxxxxx\nEmail Address : xyzhelpline@gmail.com",
+          "Call on : +91  9999666555\nEmail Address :  help@vandrevalafoundation.com",
           style: TextStyle(
             color: Colors.white,
             fontSize: 20
