@@ -42,7 +42,7 @@ class _DashboardState extends State<Dashboard> {
     return Scaffold(
       drawer: AppDrawer(),
       appBar: AppBar(
-        backgroundColor: Colors.indigo,
+        backgroundColor: Color(0xff2AB5E1),
         elevation: 0,
       ),
       body: Container(

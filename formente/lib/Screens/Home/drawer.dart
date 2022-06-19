@@ -49,18 +49,6 @@ class _AppDrawerState extends State<AppDrawer> {
             ),
           ),
           GestureDetector(
-            onTap:()async{
-              await userProvider.signOut();
-            },
-            child: ListTile(
-              leading: Icon(
-                  Icons.person_outlined
-              ),
-              trailing: Icon(Icons.arrow_forward_ios_rounded,color:Colors.grey[900]),
-              title: Text("Sign Out"),
-            ),
-          ),
-          GestureDetector(
             onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context)=>GitLink()));
             },
@@ -82,6 +70,18 @@ class _AppDrawerState extends State<AppDrawer> {
               ),
               trailing: Icon(Icons.arrow_forward_ios_rounded,color:Colors.grey[900]),
               title: Text("Report error"),
+            ),
+          ),
+          GestureDetector(
+            onTap:()async{
+              await userProvider.signOut();
+            },
+            child: ListTile(
+              leading: Icon(
+                  Icons.person_outlined
+              ),
+              trailing: Icon(Icons.arrow_forward_ios_rounded,color:Colors.grey[900]),
+              title: Text("Sign Out"),
             ),
           ),
         ],
