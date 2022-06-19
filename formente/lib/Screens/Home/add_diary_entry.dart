@@ -44,8 +44,7 @@ class _AddDiaryEntryState extends State<AddDiaryEntry> {
           height: MediaQuery.of(context).size.height,
           decoration: BoxDecoration(
               gradient: LinearGradient(
-                  colors:[const Color(0xff2AB5E1),const Color(0xff19C5FC).withOpacity(0.5)
-],
+                  colors:[const Color(0xff2AB5E1),const Color(0xff19C5FC).withOpacity(0.5)],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter
               )
@@ -147,7 +146,11 @@ class _AddDiaryEntryState extends State<AddDiaryEntry> {
                   ElevatedButton(
                       onPressed: ()async{
                         DiaryEntryModel entry = DiaryEntryModel(_entryText, DateTime(_year,_month,_day,_hour,_minute,_second));
-                        await userProvider.addToEntries(diaryEntry: entry);
+                        bool success = await userProvider.addToEntries(diaryEntry: entry);
+                        if(success)
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Diary Entry was recoreded!'),));
+                        else
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Some error occured'),));
                         print("Added to entries!");
                         // ignore: use_build_context_synchronously
                         Navigator.pop(context);
