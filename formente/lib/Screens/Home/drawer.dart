@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:formente/Providers/user.dart';
 import 'package:formente/Screens/Home/about_us.dart';
 import 'package:formente/Screens/Home/find_help.dart';
+import 'package:formente/Screens/Home/github_error.dart';
+import 'package:formente/Screens/Home/github_repo.dart';
 import 'package:provider/provider.dart';
 class AppDrawer extends StatefulWidget {
   const AppDrawer({Key? key}) : super(key: key);
@@ -46,7 +48,30 @@ class _AppDrawerState extends State<AppDrawer> {
               title: Text("Find Help"),
             ),
           ),
-
+          GestureDetector(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>GitLink()));
+            },
+            child: ListTile(
+              leading: Icon(
+                  Icons.help_outline_rounded
+              ),
+              trailing: Icon(Icons.arrow_forward_ios_rounded,color:Colors.grey[900]),
+              title: Text("GitHub Link"),
+            ),
+          ),
+          GestureDetector(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>Giterror()));
+            },
+            child: ListTile(
+              leading: Icon(
+                  Icons.help_outline_rounded
+              ),
+              trailing: Icon(Icons.arrow_forward_ios_rounded,color:Colors.grey[900]),
+              title: Text("Report error"),
+            ),
+          ),
         ],
       ),
     );

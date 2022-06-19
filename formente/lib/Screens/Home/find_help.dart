@@ -9,6 +9,7 @@ class FindHelp extends StatelessWidget {
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 50,horizontal: 20),
         height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
             gradient: LinearGradient(
                 colors:[Color(0xff2AB5E1),Color(0xff19C5FC).withOpacity(0.5)],
