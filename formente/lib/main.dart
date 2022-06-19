@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
 
           ),
         ),
-        home: SplashScreen(),
+        home: const SplashScreen(),
         debugShowCheckedModeBanner:false,
       ),
     );
@@ -52,7 +52,7 @@ class ScreensController extends StatelessWidget {
       case Status.Authenticating:
         return const Authenticate();
       case Status.Authenticated:
-        return Dashboard();
+        return const Dashboard();
       default:
         return const Authenticate();
     }

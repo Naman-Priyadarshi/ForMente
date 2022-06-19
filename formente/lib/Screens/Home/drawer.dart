@@ -25,51 +25,51 @@ class _AppDrawerState extends State<AppDrawer> {
           ),
           GestureDetector(
             onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>AboutUs()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>const AboutUs()));
 
             },
             child: ListTile(
-              leading: Icon(
+              leading: const Icon(
                 Icons.info_outline_rounded
               ),
               trailing: Icon(Icons.arrow_forward_ios_rounded,color:Colors.grey[900]),
-              title: Text("About Us"),
+              title: const Text("About Us"),
             ),
           ),
           GestureDetector(
             onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>FindHelp()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>const FindHelp()));
             },
             child: ListTile(
-              leading: Icon(
+              leading: const Icon(
                   Icons.help_outline_rounded
               ),
               trailing: Icon(Icons.arrow_forward_ios_rounded,color:Colors.grey[900]),
-              title: Text("Find Help"),
+              title: const Text("Find Help"),
             ),
           ),
           GestureDetector(
             onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>GitLink()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>const GitLink()));
             },
             child: ListTile(
-              leading: Icon(
+              leading: const Icon(
                   Icons.help_outline_rounded
               ),
               trailing: Icon(Icons.arrow_forward_ios_rounded,color:Colors.grey[900]),
-              title: Text("GitHub Link"),
+              title: const Text("GitHub Link"),
             ),
           ),
           GestureDetector(
             onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>Giterror()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>const Giterror()));
             },
             child: ListTile(
-              leading: Icon(
+              leading: const Icon(
                   Icons.help_outline_rounded
               ),
               trailing: Icon(Icons.arrow_forward_ios_rounded,color:Colors.grey[900]),
-              title: Text("Report error"),
+              title: const Text("Report error"),
             ),
           ),
           GestureDetector(
@@ -77,11 +77,11 @@ class _AppDrawerState extends State<AppDrawer> {
               await userProvider.signOut();
             },
             child: ListTile(
-              leading: Icon(
+              leading: const Icon(
                   Icons.person_outlined
               ),
               trailing: Icon(Icons.arrow_forward_ios_rounded,color:Colors.grey[900]),
-              title: Text("Sign Out"),
+              title: const Text("Sign Out"),
             ),
           ),
         ],

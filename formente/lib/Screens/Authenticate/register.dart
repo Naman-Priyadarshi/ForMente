@@ -238,7 +238,7 @@ class _RegisterState extends State<Register> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 30,),
+                      const SizedBox(height: 30,),
                       const Text(
                         "By CitizenFive",
                         style: TextStyle(
