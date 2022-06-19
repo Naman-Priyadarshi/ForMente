@@ -1,10 +1,13 @@
 // ignore_for_file: avoid_print, unused_field
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:formente/Models/diary_entry.dart';
 import 'package:formente/Providers/user.dart';
 import 'package:formente/Services/user.dart';
+import 'package:http/http.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
@@ -149,12 +152,21 @@ class _AddDiaryEntryState extends State<AddDiaryEntry> {
                   ElevatedButton(
                       onPressed: ()async{
 
-                        var queryParameters = {
+                        var url = Uri.parse('https://formente.herokuapp.com/predict');
+                        Map<String, String> body = {
                           'text': _entryText,
                         };
+                        final headers = {'Content-Type': 'application/json'};
+                        String jsonBody = json.encode(body);
+                        final encoding = Encoding.getByName('utf-8');
 
-                        var url = Uri.https('formente.herokuapp.com', '/predict', queryParameters);
-                        var response = await http.get(url);
+                        Response response = await post(
+                          url,
+                          headers: headers,
+                          body: jsonBody,
+                          encoding: encoding,
+                        );
+
                         if (response.statusCode == 200) {
                           var jsonResponse =
                           convert.jsonDecode(response.body) as Map<String, dynamic>;
