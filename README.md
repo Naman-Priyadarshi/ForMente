@@ -11,6 +11,8 @@ By harnessing the power of Natural Language Processing, ForMente lets you diagno
 
 Submission for the [Red Bricks Hackathon 2022](https://devpost.com/software/formente).
 
+Built by [Saransh Chopra](https://github.com/Saransh-cpp), [Akash Rajoria](https://github.com/rajoriaakash), [Naman Priyadarshi](https://github.com/Naman-Priyadarshi), [Paritosh Chaturvedi](https://github.com/ooparitoshoo), and [Pratham Chauhan](https://github.com/ooprathamm)!
+
 ## Inspiration
 The first person that someone usually talks to about their mental health is themselves. This usually buries the person with self-doubt that becomes hard to cure. ForMente comes in between to diagnose a person's feelings through Natural Language Processing. It is a personal diary application that lets a user know how their daily emotions feel, through the text they note down in it.
 
