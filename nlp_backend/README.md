@@ -1,5 +1,7 @@
 ## ForMente Backend
 
+[![build-checks](https://github.com/Saransh-cpp/ForMente/actions/workflows/ci.yml/badge.svg)](https://github.com/Saransh-cpp/ForMente/actions/workflows/ci.yml)
+
 Emotion detection using Natural Language Processing.
 
 ## Description
