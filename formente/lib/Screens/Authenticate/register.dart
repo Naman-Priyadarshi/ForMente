@@ -211,6 +211,7 @@ class _RegisterState extends State<Register> {
                               setState(() {
                                 message = 'Could not Register \n Please supply a valid email';
                               });
+                              // ignore: use_build_context_synchronously
                               ScaffoldMessenger.of(context).showSnackBar(snackBar);
                             }
                             // ignore: use_build_context_synchronously
