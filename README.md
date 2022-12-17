@@ -26,19 +26,19 @@ We built the application in 4 broad parts -
 
 - The application
 
-The application has been built using Flutter and Dart and is available on all Android devices. The UI has been taken utmost care of and is as smooth as it could be. This application is available through GitHub for everyone in the world.
+  The application has been built using Flutter and Dart and is available on all Android devices. The UI has been taken utmost care of and is as smooth as it could be. This application is available through GitHub for everyone in the world.
 
 - The model
 
-The application uses a model to classify what a user is feeling. This is a Natural Language Processing model, and it was trained using scikit-learn and python. We started by training an LSTM neural network, but after spending around 12 hours on it, we couldn't get it to run on an Android device, due to the technical limitations. After this, we decided to switch to a lighter model, which could be deployed on the free dynos available at Heroku, and we succeeded!
+  The application uses a model to classify what a user is feeling. This is a Natural Language Processing model, and it was trained using scikit-learn and python. We started by training an LSTM neural network, but after spending around 12 hours on it, we couldn't get it to run on an Android device, due to the technical limitations. After this, we decided to switch to a lighter model, which could be deployed on the free dynos available at Heroku, and we succeeded!
 
 - The Firebase and Firestore backend
 
-The Firebase and Firestore backend holds information about a user and their diary entries. This information is kept safe in a remote server and is never shared with anyone. A user can login or sign up to the application using the Firebase backend, and can store their diary entries in the Firestore database. These entries are fetched in the application where a user can look back in the past. Additionally, a diary entry also holds the information about the emotion that a user was feeling while creating that entry.
+  The Firebase and Firestore backend holds information about a user and their diary entries. This information is kept safe in a remote server and is never shared with anyone. A user can login or sign up to the application using the Firebase backend, and can store their diary entries in the Firestore database. These entries are fetched in the application where a user can look back in the past. Additionally, a diary entry also holds the information about the emotion that a user was feeling while creating that entry.
 
 - The NLP backend
 
-The NLP backend serves as a holder for our model. This was written using Python and FastAPI, and it has been deployed on Heroku. The backend API is completely free, independent of the other parts of the project, and easily accessible; hence, developers can use the backend API as a standalone product. The API takes in the text provided by an application and returns an emotion strongly correlated with the text.
+  The NLP backend serves as a holder for our model. This was written using Python and FastAPI, and it has been deployed on Heroku. The backend API is completely free, independent of the other parts of the project, and easily accessible; hence, developers can use the backend API as a standalone product. The API takes in the text provided by an application and returns an emotion strongly correlated with the text.
 
 ## Screens
 ![Screens1](https://user-images.githubusercontent.com/74055102/174467290-9d5d125d-165c-45ff-9e5e-243d85bd16d5.png)
