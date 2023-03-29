@@ -26,7 +26,7 @@ labels = {
 ### To train the model locally -
 1. Fork and clone the repository
 ```
-git clone https://github.com/<your_username>/SceneNet-Backend
+git clone https://github.com/<your_username>/ForMente
 ```
 2. Create a new virtual environment
 ```
@@ -48,7 +48,7 @@ ipython kernel install --user --name=venv
 ### To run the API locally-
 1. Fork and clone the repository
 ```
-git clone https://github.com/<your_username>/SceneNet-Backend
+git clone https://github.com/<your_username>/ForMente
 ```
 2. Create a new virtual environment
 ```
