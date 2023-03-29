@@ -7,10 +7,13 @@ import 'package:provider/provider.dart';
 import 'Providers/app.dart';
 import 'Providers/user.dart';
 import 'Screens/Authenticate/authenticate.dart';
+import 'package:formente/firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 class MyApp extends StatelessWidget {

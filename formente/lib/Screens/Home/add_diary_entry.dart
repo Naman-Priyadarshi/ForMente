@@ -45,6 +45,18 @@ class _AddDiaryEntryState extends State<AddDiaryEntry> {
   Widget build(BuildContext context) {
     final userProvider = Provider.of<UserProvider>(context);
     return Scaffold(
+      appBar: AppBar(
+          elevation: 0,
+          backgroundColor: const Color(0xff2AB5E1),
+          leading: IconButton(
+            icon: const Icon(
+                Icons.arrow_back
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          )
+      ),
       body: SingleChildScrollView(
         child: Container(
           height: MediaQuery.of(context).size.height,
@@ -151,13 +163,23 @@ class _AddDiaryEntryState extends State<AddDiaryEntry> {
                   const SizedBox(height: 30,),
                   ElevatedButton(
                       // ignore: duplicate_ignore
-                      onPressed: ()async{
+                      onPressed: () async{
 
-                        var url = Uri.parse('https://formente.herokuapp.com/predict');
+                        // for local host
+                        var url = Uri.http('127.0.0.1:8000', '/predict');
+
+                        // after deployment use this
+                        // var url = Uri.parse(
+                        //     // 'https://formente.herokuapp.com/predict'
+                        // );
                         Map<String, String> body = {
                           'text': _entryText,
                         };
-                        final headers = {'Content-Type': 'application/json'};
+                        final headers = {
+                          "Access-Control-Allow-Origin": "*",  // CORS
+                          'Content-Type': 'application/json',
+                          'Accept': '*/*'
+                        };
                         String jsonBody = json.encode(body);
                         final encoding = Encoding.getByName('utf-8');
 

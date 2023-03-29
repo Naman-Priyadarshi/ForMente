@@ -37,6 +37,13 @@
             {
               "client_id": "1049793808873-o2qmgrbeak8frc0m30s7523rovejmb0q.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "1049793808873-o532ej4ed9fdsbb1183f0m3t4rsjjnt9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.citizenfive.formente"
+              }
             }
           ]
         }
